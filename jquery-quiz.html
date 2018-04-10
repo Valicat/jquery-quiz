@@ -2,6 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <style>
+    </style>
     <title>News quiz for April 9, 2018</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   </head>
@@ -11,15 +13,15 @@
 
       <div id="question-1" class="form-group">
         <label class="control-label">What color is the sky?</label>
-        <input type="text" class="form-control" />
+        <input type="text" class="form-control" id="q1"/>
       </div>
 
       <div id="question-2" class="form-group">
         <label class="control-label">How many is in a bakers dozen?</label>
-        <select class="form-control">
+        <select class="form-control" id="q2">
           <option value="answer-1">12</option>
           <option value="answer-2">13</option>
-          <option value="answer-2">6</option>
+          <option value="answer-3">6</option>
         </select>
       </div>
 
@@ -28,8 +30,28 @@
       </div>
     </div>
 
-    <script>
-      src="http://code.jquery.com/jquery-3.3.1.min.js"
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js">
     </script>
+    <script>
+      $('#grade-it').on('click', function() {
+        //checks if answer is sky
+        var q1Answer = $("#q1").val();
+
+        if (q1Answer == "blue" || q1Answer == "Blue") {
+          $("#question-1").addClass("has-success");
+      }  else {
+          $("#question-1").addClass("has-error");
+        }
+
+        var q2Answer = $("#q2").val();
+        if (q2Answer == "answer-2") {
+          $("#question-2").addClass("has-success");
+        } else {
+          $("#question-2").addClass("has-error");
+        }
+      });
+    </script>
+
   </body>
 </html>
