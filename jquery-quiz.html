@@ -40,6 +40,13 @@
     </script>
     <script>
       $('#grade-it').on('click', function() {
+
+        $("#questions-1").removeClass("has-success");
+        $("#question-1").removeClass("has-error");
+        $("#questions-2").removeClass("has-success");
+        $("#question-2").removeClass("has-error");
+        $("#questions-3").removeClass("has-success");
+        $("#question-3").removeClass("has-error");
         //checks if answer is sky
         var q1Answer = $("#q1").val();
 
@@ -56,9 +63,9 @@
           $("#question-2").addClass("has-error");
         }
 
-        var q1Answer = $("#q3").val();
+        var q3Answer = $("#q3").val();
 
-        if (q1Answer == "Orange" || q1Answer == "orange") {
+        if (q3Answer == "Orange" || q3Answer == "orange") {
           $("#question-3").addClass("has-success");
       }  else {
           $("#question-3").addClass("has-error");
